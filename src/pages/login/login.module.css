@@ -1,0 +1,140 @@
+.loginFullPage {
+    display: flex;
+    min-height: 100vh;
+
+}
+
+
+
+
+.loginLeftPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 58%;
+    min-height: 100%;
+    background: linear-gradient(205deg, #E7D2B7, #735126);
+    backdrop-filter: blur(10px);
+    /* box-shadow: 0 8px 1002px 0 #735126; */
+    color: white;
+    gap: 5px;
+
+}
+
+.loginRightPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42%;
+}
+
+@media screen and (max-width: 800px) {
+    .loginFullPage {
+        flex-direction: column;
+    }
+    .loginLeftPage {
+        width: 100%;
+        min-height: 20vh;
+    }
+    .loginRightPage {
+        width: 100%;
+    }
+}
+
+.loginUpperTag {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.loginLowerTag {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 25px;
+    text-align: center;
+}
+
+.loginCard {
+    width: 20rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.upperLoginCard {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.loginGreet {
+    color: #333;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.loginWelcom {
+    color: #333;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.loginInput {
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid #EEE;
+    background: #FFF;
+    outline: none;
+    padding: 18px 26px;
+    font-size: 1rem;
+    color:#543916CC;
+}
+
+.loginButton {
+    /* font-family: "IBM Plex Sans", sans-serif; */
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.3px;
+    width: 100%;
+    border-radius: 30px;
+    background: #E7D2B7;
+    padding: 18px 26px;
+    border: none;
+    cursor: pointer;
+}
+
+.loginButton:hover {
+    background: #543916CC;
+    color: white;
+    transition: 0.4s;
+}
+
+.middleLoginCard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lowerLoginCard {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.createLogin:hover {
+    cursor: pointer;
+    color: #543916CC;
+    transition: 0.3s;
+}
