@@ -13,13 +13,16 @@ export default function PostPage() {
   const [liked, setLiked] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:4000/post/${id}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
+      const response = await fetch(
+        `https://my-blogs-backend-ptdp.vercel.app/post/${id}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
 
       if (response.status === 200) {
         response.json().then((postInfo) => {
@@ -40,14 +43,17 @@ export default function PostPage() {
   const handleLiked = async () => {
     setLiked(!liked);
     try {
-      const response = await fetch(`http://localhost:4000/post/${id}/like`, {
-        method: "POST",
-        body: JSON.stringify({ userInfo }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
+      const response = await fetch(
+        `https://my-blogs-backend-ptdp.vercel.app/post/${id}/like`,
+        {
+          method: "POST",
+          body: JSON.stringify({ userInfo }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
 
       if (response.status === 200) {
         response.json().then((postInfo) => {
@@ -58,7 +64,6 @@ export default function PostPage() {
       console.error("Failed to like/unlike post", error);
     }
   };
-
 
   return (
     <div style={{ margin: "30px" }} className="post-page">
@@ -119,7 +124,10 @@ export default function PostPage() {
         style={{ display: "flex", justifyContent: "center", height: "400px" }}
         className="image"
       >
-        <img src={`http://localhost:4000/${postInfo.cover}`} alt="" />
+        <img
+          src={`https://my-blogs-backend-ptdp.vercel.app/${postInfo.cover}`}
+          alt=""
+        />
       </div>
       <div
         className="content"

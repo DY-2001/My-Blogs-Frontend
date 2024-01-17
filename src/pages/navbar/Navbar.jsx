@@ -4,15 +4,21 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 const Navbar = () => {
   const Navigate = useNavigate();
-  const { setUserInfo, userInfo, setMyBlogs, myBlogs, mostLiked, setMostLiked } =
-    useContext(UserContext);
-  const [ lastest, setLatest ] = useState(false);
+  const {
+    setUserInfo,
+    userInfo,
+    setMyBlogs,
+    myBlogs,
+    mostLiked,
+    setMostLiked,
+  } = useContext(UserContext);
+  const [lastest, setLatest] = useState(false);
   const handleCreateBlog = () => {
     Navigate("/create");
   };
 
   function logout() {
-    fetch("http://localhost:4000/logout", {
+    fetch("https://my-blogs-backend-ptdp.vercel.app/logout", {
       credentials: "include",
       method: "POST",
     });
@@ -42,7 +48,7 @@ const Navbar = () => {
         >
           LATEST
         </div>
-        <div className={styles.navBlogTitle} >MOST LIKED</div>
+        <div className={styles.navBlogTitle}>MOST LIKED</div>
       </div>
       <div className={styles.navLogout} onClick={logout}>
         Logout

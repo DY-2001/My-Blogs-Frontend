@@ -17,16 +17,19 @@ const Blogs = () => {
   useEffect(() => {
     Aos.init();
   }, []);
-console.log(userInfo, "userInfo")
+  console.log(userInfo, "userInfo");
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("https://my-blogs-backend-ptdp.vercel.app/post", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://my-blogs-backend-ptdp.vercel.app/post",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
       if (response.status === 200) {
         response.json().then((posts) => {
           setBlogs(posts);
@@ -56,7 +59,9 @@ console.log(userInfo, "userInfo")
                 <div className={styles.blogParticular} data-aos="fade-up-right">
                   <div className={styles.blogLeft}>
                     <img
-                      src={"http://localhost:4000/" + blog.cover}
+                      src={
+                        "https://my-blogs-backend-ptdp.vercel.app/" + blog.cover
+                      }
                       alt="img"
                       className={styles.blogImg}
                     ></img>

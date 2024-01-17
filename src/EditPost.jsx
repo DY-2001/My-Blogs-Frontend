@@ -12,10 +12,13 @@ export default function EditPost() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://localhost:4000/post/" + id, {
-        method: "GET",
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://my-blogs-backend-ptdp.vercel.app/post/" + id,
+        {
+          method: "GET",
+          credentials: "include",
+        }
+      );
       if (response.status === 200) {
         const postInfo = await response.json();
         setTitle(postInfo?.title);
@@ -38,11 +41,14 @@ export default function EditPost() {
     if (files?.[0]) {
       data.set("file", files?.[0]);
     }
-    const response = await fetch("http://localhost:4000/post", {
-      method: "PUT",
-      body: data,
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://my-blogs-backend-ptdp.vercel.app/post",
+      {
+        method: "PUT",
+        body: data,
+        credentials: "include",
+      }
+    );
     if (response.ok) {
       setRedirect(true);
     }
@@ -54,7 +60,7 @@ export default function EditPost() {
 
   return (
     <form onSubmit={updatePost}>
-      <div style={{margin: "30px"}}>
+      <div style={{ margin: "30px" }}>
         <input
           type="title"
           placeholder={"Title"}

@@ -11,12 +11,15 @@ const Login = () => {
   const { setUserInfo } = useContext(UserContext);
 
   const handleLogin = async () => {
-    const response = await fetch("http://localhost:4000/login", {
-      method: "POST",
-      body: JSON.stringify({ username, password }),
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://my-blogs-backend-ptdp.vercel.app/login",
+      {
+        method: "POST",
+        body: JSON.stringify({ username, password }),
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+      }
+    );
     if (response.ok) {
       response.json().then((userInfo) => {
         localStorage.setItem("userInfo", JSON.stringify(userInfo));

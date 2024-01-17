@@ -8,11 +8,14 @@ const Register = (props) => {
   const [password, setPassword] = useState("");
 
   const handleRegister = async () => {
-    const response = await fetch("http://localhost:4000/register", {
-      method: "POST",
-      body: JSON.stringify({ username, password }),
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await fetch(
+      "https://my-blogs-backend-ptdp.vercel.app/register",
+      {
+        method: "POST",
+        body: JSON.stringify({ username, password }),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
 
     if (response.status === 200) {
       alert("Registration Successful");

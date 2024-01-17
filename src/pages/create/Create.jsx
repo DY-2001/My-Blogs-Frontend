@@ -19,22 +19,25 @@ export default function Create() {
     data.set("content", content);
     data.set("file", files[0]);
     ev.preventDefault();
-    const response = await fetch("http://localhost:4000/post", {
-      method: "POST",
-      body: data,
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://my-blogs-backend-ptdp.vercel.app/post",
+      {
+        method: "POST",
+        body: data,
+        credentials: "include",
+      }
+    );
     if (response.ok) {
       setRedirect(true);
     }
   }
-  console.log(userInfo, "this is user info")
-  
-  if(Object.keys(userInfo).length === 0) return <Navigate to={"/"} />;
+  console.log(userInfo, "this is user info");
+
+  if (Object.keys(userInfo).length === 0) return <Navigate to={"/"} />;
   if (redirect) {
     return <Navigate to={"/blogs"} />;
   }
-  
+
   return (
     <form onSubmit={createNewPost}>
       <div style={{ margin: "40px 200px 0px 200px" }}>
