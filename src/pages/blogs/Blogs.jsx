@@ -20,7 +20,7 @@ const Blogs = () => {
 console.log(userInfo, "userInfo")
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://localhost:4000/post", {
+      const response = await fetch("https://my-blogs-backend-ptdp.vercel.app/post", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
