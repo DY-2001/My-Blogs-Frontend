@@ -12,25 +12,26 @@ const Login = () => {
 
   const handleLogin = async () => {
     const response = await fetch(
-      "https://my-blogs-backend-ptdp.vercel.app/login",
+      "https://radiant-gumdrop-cafcd0.netlify.app/login",
       {
         method: "POST",
         body: JSON.stringify({ username, password }),
         headers: { "Content-Type": "application/json" },
         credentials: "include",
       }
-    ).then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-    })
-    .catch(error => {
-      console.log('Fetch error:', error);
-    });
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log("Fetch error:", error);
+      });
 
     if (response.ok) {
       response.json().then((userInfo) => {

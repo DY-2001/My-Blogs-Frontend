@@ -13,7 +13,7 @@ export default function EditPost() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://my-blogs-backend-ptdp.vercel.app/post/" + id,
+        "https://radiant-gumdrop-cafcd0.netlify.app/post/" + id,
         {
           method: "GET",
           credentials: "include",
@@ -42,7 +42,7 @@ export default function EditPost() {
       data.set("file", files?.[0]);
     }
     const response = await fetch(
-      "https://my-blogs-backend-ptdp.vercel.app/post",
+      "https://radiant-gumdrop-cafcd0.netlify.app/post",
       {
         method: "PUT",
         body: data,

@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   function logout() {
-    fetch("https://my-blogs-backend-ptdp.vercel.app/logout", {
+    fetch("https://radiant-gumdrop-cafcd0.netlify.app/logout", {
       credentials: "include",
       method: "POST",
     });

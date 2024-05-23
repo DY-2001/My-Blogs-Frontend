@@ -14,7 +14,7 @@ export default function PostPage() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://my-blogs-backend-ptdp.vercel.app/post/${id}`,
+        `https://radiant-gumdrop-cafcd0.netlify.app/post/${id}`,
         {
           method: "GET",
           headers: {
@@ -44,7 +44,7 @@ export default function PostPage() {
     setLiked(!liked);
     try {
       const response = await fetch(
-        `https://my-blogs-backend-ptdp.vercel.app/post/${id}/like`,
+        `https://radiant-gumdrop-cafcd0.netlify.app/post/${id}/like`,
         {
           method: "POST",
           body: JSON.stringify({ userInfo }),
@@ -125,7 +125,7 @@ export default function PostPage() {
         className="image"
       >
         <img
-          src={`https://my-blogs-backend-ptdp.vercel.app/${postInfo.cover}`}
+          src={`https://radiant-gumdrop-cafcd0.netlify.app/${postInfo.cover}`}
           alt=""
         />
       </div>

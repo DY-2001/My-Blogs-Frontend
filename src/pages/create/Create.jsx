@@ -20,7 +20,7 @@ export default function Create() {
     data.set("file", files[0]);
     ev.preventDefault();
     const response = await fetch(
-      "https://my-blogs-backend-ptdp.vercel.app/post",
+      "https://radiant-gumdrop-cafcd0.netlify.app/post",
       {
         method: "POST",
         body: data,

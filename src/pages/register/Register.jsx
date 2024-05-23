@@ -9,7 +9,7 @@ const Register = (props) => {
 
   const handleRegister = async () => {
     const response = await fetch(
-      "https://my-blogs-backend-ptdp.vercel.app/register",
+      "https://radiant-gumdrop-cafcd0.netlify.app/register",
       {
         method: "POST",
         body: JSON.stringify({ username, password }),

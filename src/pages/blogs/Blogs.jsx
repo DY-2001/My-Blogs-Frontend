@@ -21,7 +21,7 @@ const Blogs = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://my-blogs-backend-ptdp.vercel.app/post",
+        "https://radiant-gumdrop-cafcd0.netlify.app/post",
         {
           method: "GET",
           headers: {
@@ -60,7 +60,8 @@ const Blogs = () => {
                   <div className={styles.blogLeft}>
                     <img
                       src={
-                        "https://my-blogs-backend-ptdp.vercel.app/" + blog.cover
+                        "https://radiant-gumdrop-cafcd0.netlify.app/" +
+                        blog.cover
                       }
                       alt="img"
                       className={styles.blogImg}
